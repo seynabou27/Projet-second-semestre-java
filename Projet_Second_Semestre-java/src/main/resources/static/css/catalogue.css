@@ -91,6 +91,18 @@ a .btn-panier{
     background-color: #2F2F2F;
 }
 
+
+.zoom  {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.zoom:hover{
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
 .container .produit1{
     color: white;
     justify-content: center;
@@ -174,11 +186,11 @@ h5{
     margin-top: 30px;
 }
 .milieu {
-    margin-top: -28px;
+    margin-top: -33px;
     margin-left: 71px;
 }
 .milieu h5{
-    font-size: 10px;
+    font-size: 18px;
 }
 .btn2{
     margin-left: -13px;
@@ -265,4 +277,49 @@ footer{
     float: right;
     margin-top: 31px;
     margin-right: -100px;
+}
+
+.modal .modal-dialog-aside{ 
+	width: 500px; max-width:80%; height: 100%; margin:0; transform: translate(0); transition: transform .2s;
+}
+.modal .modal-dialog-aside .modal-content{  height: inherit; border:0; border-radius: 0;}
+.modal .modal-dialog-aside .modal-content .modal-body{ overflow-y: auto }
+.modal.fixed-left .modal-dialog-aside{ margin-left:auto;  transform: translateX(100%); }
+.modal.fixed-right .modal-dialog-aside{ margin-right:auto; transform: translateX(-100%); }
+.modal.show .modal-dialog-aside{ transform: translateX(0);  }
+
+.modal .modal-dialog-aside .modal-content{
+    background-color: #1A1A1A;
+}
+.modal-header {
+    /* display: -ms-flexbox; */
+    display: block;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+}
+.modal-footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding: 1rem;
+    background-color: #343434;
+}
+.btn-panier1{
+    background: #464242 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+    color: white;
+    /* opacity: 0.1; */
+    left: 1609px;
+    width: 206px;
+    height: 40px;
+
 }
