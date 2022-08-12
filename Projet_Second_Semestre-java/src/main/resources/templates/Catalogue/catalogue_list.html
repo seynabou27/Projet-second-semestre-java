@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.thymeleaf.org/">
   <head>
     <title>Catalogue</title>
     <!-- Required meta tags -->
@@ -57,7 +57,6 @@
       <div class="row">
         <div class="col-md-6 zoom">
           <img th:src="@{images/burger.png}" alt="">
-          
         </div>
         <div class="col-md-6">
           <h3 class="titre"><b>Bienvenue au Temple du Burger !!</b></h3>
@@ -92,6 +91,18 @@
          <!--<div class="col-md-3">
             gauche
           </div>--> 
+
+          <div class="filtre">
+            <div class="filtre1">
+              <li> <b>Menu</b></li>
+              <li><b>Burgers</b></li>
+              <li><b>Boissons</b></li>
+              <li><b>Frites</b></li>
+            </div>
+            <div class="filtre2">
+              
+            </div>
+          </div>
           <div class="col-md-6 ">
             <div class="card-content" th:each="b:${burgers}">
               <div class="card w-75 card3">
@@ -111,7 +122,7 @@
                     <div class="btn2">
                       <!--<a class="btn detail-btn" style="color:white ;"th:href="@{Catalogue/detail}">Voir détails</a>!-->
                       <!--<a data-toggle="modal" data-target="#modal_aside_left" class="btn btn-detail">Voir détails</a>!-->
-                      <button data-toggle="modal" data-target="#modal_aside_right" class="btn btn-detail" type="button">Voir detail</button>
+                      <button data-toggle="modal" data-target="#modal_aside_right" class="btn btn-detail" type="button" style="color:white ;">Voir detail</button>
                       <a class="btn btn-commande" href="#">Commander</a>
                     </div>
                   </div>

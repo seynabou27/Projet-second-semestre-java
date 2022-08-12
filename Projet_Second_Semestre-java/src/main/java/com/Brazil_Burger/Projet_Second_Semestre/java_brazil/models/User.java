@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -30,6 +32,11 @@ public abstract class User implements Serializable {
     protected String email;
 
     protected String password;
+
+    @ManyToOne
+    @JoinColumn(name = "role" , referencedColumnName = "id")
+    protected Role role ;
+
 
     public Long getId() {
         return id;
@@ -69,6 +76,13 @@ public abstract class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
 

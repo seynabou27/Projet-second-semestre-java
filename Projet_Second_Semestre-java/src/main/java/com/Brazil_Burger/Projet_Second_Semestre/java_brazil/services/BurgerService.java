@@ -28,4 +28,23 @@ public class BurgerService {
     public List<Burger> getAllBurger(){
         return burgerRepository.findAll();
     }
+
+
+    public Burger findBurgerById(Long id) {
+        return burgerRepository.findById(id).orElse(null);
+    }
+
+    // public Burger findBurgerByNom(String nom) {
+    //     return burgerRepository.findByNom(nom).orElse(null);
+    // }
+
+    public boolean deleteBurger(Burger burger) {
+        try {
+            burgerRepository.delete(burger);
+            return true;
+        } catch (Exception e) {
+            log.severe(e.getLocalizedMessage());
+            throw e;
+        }
+    }
 }

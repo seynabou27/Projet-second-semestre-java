@@ -21,18 +21,6 @@ public class Burger {
 
     private String details;
 
-    private int quantite;
-
-   
-
-    public int getQuantite() {
-        return quantite;
-    }
-
-    public void setQuantite(int quantite) {
-        this.quantite = quantite;
-    }
-
     public String getDetails() {
         return details;
     }

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.models.Burger;
 import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.services.BurgerService;
-import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.services.CatalogueService;
 
 
 
@@ -37,6 +36,6 @@ public class CatalogueController {
     @GetMapping({"/Catalogue/detail"})
     public String detail(Model model){
 
-        return "Catalogue/detail";
+        return "Catalogue/catalogue_list";
     }
 }

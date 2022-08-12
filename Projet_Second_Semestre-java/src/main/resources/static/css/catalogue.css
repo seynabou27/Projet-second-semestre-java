@@ -323,3 +323,17 @@ footer{
     height: 40px;
 
 }
+.filtre {
+    margin-top: 64px;
+    background-color: #343434;
+    width: 143px;
+    margin-left: -51px;
+    height: 461px;
+    padding: 31px;
+}
+.filtre li{
+    text-decoration: none;
+    list-style: none;
+    cursor: pointer;
+    padding: 3px;
+}
