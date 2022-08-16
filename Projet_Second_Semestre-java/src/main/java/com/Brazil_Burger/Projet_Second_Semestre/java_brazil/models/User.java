@@ -1,6 +1,7 @@
 package com.Brazil_Burger.Projet_Second_Semestre.java_brazil.models;
 
 import java.io.Serializable;
+import java.util.HashSet;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorValue;
@@ -17,12 +18,10 @@ import javax.persistence.ManyToOne;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="user_type")
 @DiscriminatorValue("USER")
-
-public abstract class User implements Serializable {
+public  class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     protected Long id;
 
     protected String nom;
@@ -35,7 +34,7 @@ public abstract class User implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "role" , referencedColumnName = "id")
-    protected Role role ;
+    protected HashSet<Role> role ;
 
 
     public Long getId() {
@@ -77,13 +76,28 @@ public abstract class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    public Role getRole() {
+    public HashSet<Role> getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRole(HashSet<Role> hashSet) {
+        this.role = hashSet;
     }
+
+    public Object getUserName() {
+        return null;
+    }
+
+    public void setActive(boolean b) {
+    }
+
+    public boolean getActive() {
+        return false;
+    }
+
+    
+
+    
 
 
 }

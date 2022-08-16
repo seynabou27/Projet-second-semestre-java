@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.thymeleaf.org/">
+  <head>
+    <title>Détails</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/screen.css"> 
+
+  </head>
+  <body>
+      <div class="container-fluid contenu"th:each="b:${burgerList}">
+
+        <div class="modal-dialog modal-dialog-aside" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <span class="small text-uppercase " style="color:#959292; ;">Menu / Détails</span>
+                <h5 class="modal-title"></h5>
+                <span style="color:#FFD800 ;" th:text="@{${b.prix+'FCFA'}}"></span>      
+
+                </div>
+                <div class="modal-body">
+                  <img th:src="@{images/burger2.png}" alt="" style="width: 454px;">
+                  <p th:text="${b.details}"></p>
+
+                    <div class="Quantite">
+                      <div class="row">
+                        <div class="col-md-5 produit-burger">
+                          <h4><b>Burgers</b></h4>
+                        </div>
+                        <div class="col-md-7">
+                          <div class="produit">
+                            <div class="Cart-Container">
+                              <div class="Cart-Items">
+                                <div class="image-box">
+                                <img src="images/burger2.png" style="height:55px"/>
+                                </div>
+                                <div class="about">
+                                <h1 class="title">Apple Juice</h1>
+                                <h3 class="subtitle">250ml</h3>
+                                </div>
+                                
+                              </div> 
+                              
+                              <div class="counter"> 
+                                <div class="btn1">+</div>
+                                <div class="count">2</div>
+                                <div class="btn1">-</div>
+                              </div>
+                              <div class="prices"></div> 
+      
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mt-4">
+                        <div class="col-md-5 produit-burger">
+                          <h4><b>Frites</b></h4>
+                        </div>
+                        <div class="col-md-7">
+                          <div class="produit">
+                            <div class="Cart-Container">
+                              <div class="Cart-Items">
+                                <div class="image-box">
+                                <img src="images/frite.jpg" style="height:55px"/>
+                                </div>
+                                <div class="about">
+                                <h1 class="title">Apple Juice</h1>
+                                <h3 class="subtitle">250ml</h3>
+                                </div>
+                                
+                              </div> 
+                              
+                              <div class="counter"> 
+                                <div class="btn1">+</div>
+                                <div class="count">2</div>
+                                <div class="btn1">-</div>
+                              </div>
+                              <div class="prices"></div> 
+      
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--BOISSON-->
+                    <div class="row mt-4">
+                      <div class="col-md-5 produit-burger">
+                        <h4><b>Boisson</b></h4>
+                      </div>
+                      <div class="col-md-7">
+                        <div class="produit">
+                          <div class="Cart-Container">
+                            <div class="Cart-Items">
+                              <div class="image-box">
+                              <img src="images/fanta.jpg" style="height:55px"/>
+                              </div>
+                              <div class="about">
+                              <h1 class="title">Apple Juice</h1>
+                              <h3 class="subtitle">250ml</h3>
+                              </div>
+                              
+                            </div> 
+                            
+                            <div class="counter"> 
+                              <div class="btn1">+</div>
+                              <div class="count">2</div>
+                              <div class="btn1">-</div>
+                            </div>
+                            <div class="prices"></div> 
+    
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                
+                   
+                    
+                      
+                <div class="modal-footer">
+                  <a class="btn btn-panier1 me-md-2" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.048" height="16.693" viewBox="0 0 16.048 16.693">
+                      <path id="shopping_cart_FILL0_wght300_GRAD0_opsz48" d="M8.222,21.193a1.319,1.319,0,0,1-.984-.411,1.374,1.374,0,0,1-.4-.995A1.366,1.366,0,0,1,8.222,18.4a1.366,1.366,0,0,1,.984.411,1.371,1.371,0,0,1,.011,1.968,1.355,1.355,0,0,1-.995.411Zm8.39,0a1.319,1.319,0,0,1-.984-.411,1.374,1.374,0,0,1-.4-.995,1.376,1.376,0,0,1,2.357-.973,1.4,1.4,0,0,1,.011,1.968A1.319,1.319,0,0,1,16.612,21.193ZM6.968,7.2l2.4,5.017H15.4a.288.288,0,0,0,.13-.032.164.164,0,0,0,.086-.1L18.19,7.441a.181.181,0,0,0,0-.173.146.146,0,0,0-.13-.065Zm-.5-.995H18.45a.914.914,0,0,1,.908.432,1,1,0,0,1-.086.973l-2.66,4.8a1.642,1.642,0,0,1-.541.573,1.317,1.317,0,0,1-.735.227h-6.4L7.746,15.42a.19.19,0,0,0-.011.205.188.188,0,0,0,.184.119H18v.995H8.071a1.28,1.28,0,0,1-1.178-.573A1.157,1.157,0,0,1,6.9,14.922l1.384-2.53L5.022,5.473H3.4V4.5H5.649Zm2.9,6.011h0Z" transform="translate(-3.4 -4.5)" fill="#f2f2f2"/>
+                    </svg>
+                    Ajouter à mon panier</a>
+                  <a class="btn btn-connexion " href="#">Commander</a>
+                </div>
+              </div>
+            </div><!-- modal-bialog .// -->
+           
+
+        </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

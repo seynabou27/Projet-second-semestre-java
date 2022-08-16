@@ -1,6 +1,10 @@
 package com.Brazil_Burger.Projet_Second_Semestre.java_brazil.services;
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.models.Gestionnaire;
@@ -12,14 +16,21 @@ import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.repository.UserRepos
 
 @Service
 public class UserService {
+    @Autowired
     private UserRepository userRepository;
+    @Autowired
     private RoleRepository roleRepository;
     @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    @Autowired
     private GestionnaireRepository gestionnaireRepository;
-
-    public UserService(UserRepository userRepository, RoleRepository roleRepository) {
+    @Autowired
+    public UserService(UserRepository userRepository, RoleRepository roleRepository,
+                        BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+
     }
 
 
@@ -27,7 +38,7 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
-    public Gestionnaire findAdminByEmail(String email) {
+    public Gestionnaire findGestionnaireByEmail(String email) {
         return gestionnaireRepository.findByEmail(email);
     }
 
@@ -35,13 +46,26 @@ public class UserService {
         return roleRepository.findByLibelle(libelle);
     }
 
+    // public User saveUser(User user) {
+    //     try {
+    //         userRepository.save(user);
+    //         return user;
+    //     } catch(Exception e) {
+    //         throw e;
+    //     }
+    // }
+
     public User saveUser(User user) {
-        try {
-            userRepository.save(user);
-            return user;
-        } catch(Exception e) {
-            throw e;
-        }
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        user.setActive(true);
+        Role userRole = roleRepository.findByLibelle("CLIENT");
+        user.setRole(new HashSet<Role>(Arrays.asList(userRole)));
+        return userRepository.save(user);
+    }
+
+
+    public User findUserByUserName(Object userName) {
+        return null;
     }
   
 }

@@ -1,5 +1,6 @@
 package com.Brazil_Burger.Projet_Second_Semestre.java_brazil.fixture;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -19,14 +20,16 @@ public class UserFixture {
     private BCryptPasswordEncoder encoder;
 
     public void loadDefaultGestionnaire() {
-        User user = new Gestionnaire();
-        user.setEmail("gestionnaire@mail.com");
-        user.setNom("gestionnaire");
-        user.setPrenom("gestionnaire");
-        user.setPassword(encoder.encode("passer@123"));
-        Role role = userService.findRoleByLibelle("GESTIONNAIRE");
-        user.setRole(role);
-        userService.saveUser(user);
+        // User user = new Gestionnaire();
+        // user.setEmail("gestionnaire@mail.com");
+        // user.setNom("gestionnaire");
+        // user.setPrenom("gestionnaire");
+        // user.setPassword("passer123");
+        // Role role = userService.findRoleByLibelle("GESTIONNAIRE");
+        // user.setRole(role);
+        // userService.saveUser(user);
     }
+
+   
     
-}
+ }

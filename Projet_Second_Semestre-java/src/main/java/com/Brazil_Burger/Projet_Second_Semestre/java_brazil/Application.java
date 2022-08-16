@@ -22,8 +22,8 @@ public class Application implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		burgerFixture.loadBurgers();
-		userFixture.loadDefaultGestionnaire();
+		
+		// userFixture.loadDefaultGestionnaire();
 		
 	}
 

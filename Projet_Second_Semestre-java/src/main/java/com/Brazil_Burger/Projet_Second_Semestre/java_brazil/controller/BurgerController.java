@@ -7,35 +7,59 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.models.Burger;
+import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.models.Frite;
 import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.services.BurgerService;
+import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.services.FriteServices;
 
 @Controller
 public class BurgerController {
 
     @Autowired
    private BurgerService burgerService;
+   @Autowired 
+   private FriteServices friteServices;
 
    @GetMapping({"/Produit"})
     public String burgerAdd(Model model){
       Burger burger = new Burger();
       model.addAttribute("burger", burger);
+
         return "Produit/ajoutBurger";
     }
 
-    @GetMapping("/burger-list")
-    public String getViewListBurger(Model model) {
-        List<Burger> burgers = burgerService.getAllBurger();
+    
 
-        model.addAttribute("burgers", burgers);
+    @GetMapping({"/burger-list"})
+    public String ViewListBurger(Model model) {
+        List<Burger> listBurger = burgerService.getAllBurger();
+        model.addAttribute("listBurger", listBurger);
         return "Produit/burger-list";
     }
+    //ajout frite
+    @GetMapping({"/Produit/produitFrite"})
+    public String friteAdd(Model model){
+        Frite frite = new Frite();
+        model.addAttribute("frite", frite);
+  
+          return "Produit/ajoutFrite";
+    }
+    //liste frite
+    @GetMapping({"/frite-list"})
+    public String ViewListFrite(Model model) {
+        List<Frite> listFrites = friteServices.getAllFrites();
+        model.addAttribute("listFrites", listFrites);
+        return "Produit/frite-list";
+    }
 
-    //post burger/////
+    
+////////////////////////////////////Requette POST/////////////////////////////////////////////////
+                //post burger/////
 
-    @PostMapping("/Produit")
+    @PostMapping({"/Produit"})
     public String addBurger(@ModelAttribute("burger") Burger burger,Model model) {
         if(burger == null || burger.getNom() == null || burger.getNom().equals("")) {
             model.addAttribute("errorNom", "Champ obligatoire");
@@ -47,6 +71,23 @@ public class BurgerController {
         } else {
             model.addAttribute("error", "Echec de l'operation");
             return "Produit/ajoutBurger";
+        }
+        
+    }
+
+    ////////////post frite
+    @PostMapping({"/Produit/produitFrite"})
+    public String addFrite(@ModelAttribute("frite") Frite frite,Model model) {
+        if(frite == null || frite.getNom() == null || frite.getNom().equals("")) {
+            model.addAttribute("errorNom", "Champ obligatoire");
+            return "Produit/friteAdd";
+        }
+        friteServices.addFrite(frite);
+        if (frite.getId() != null) {
+            return "redirect:/frite-list";
+        } else {
+            model.addAttribute("error", "Echec de l'operation");
+            return "Produit/ajoutFrite";
         }
         
     }
