@@ -7,7 +7,5 @@ import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.models.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    User findByEmail(String email);
-
-    
+    User findByEmail(String email);   
 }

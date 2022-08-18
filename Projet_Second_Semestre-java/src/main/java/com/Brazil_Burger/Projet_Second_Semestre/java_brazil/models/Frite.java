@@ -13,8 +13,18 @@ public class Frite {
     private Long id;
     private String nom;
     private int prix;
-    private String type;
+    private String type_frite;
     private String details;
+    private String type;
+
+    public String getType_frite() {
+        return type_frite;
+    }
+    public void setType_frite(String type_frite) {
+        this.type_frite = type_frite;
+    }
+   
+    
     public String getDetails() {
         return details;
     }

@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class Menu {
 
@@ -16,6 +17,8 @@ public class Menu {
     private String nom;
 
     private String image;
+
+   
 
     public Long getId() {
         return id;

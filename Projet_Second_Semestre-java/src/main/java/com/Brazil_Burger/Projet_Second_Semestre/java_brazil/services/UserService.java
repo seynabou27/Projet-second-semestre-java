@@ -20,18 +20,18 @@ public class UserService {
     private UserRepository userRepository;
     @Autowired
     private RoleRepository roleRepository;
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    // @Autowired
+    // private BCryptPasswordEncoder bCryptPasswordEncoder;
     @Autowired
     private GestionnaireRepository gestionnaireRepository;
-    @Autowired
-    public UserService(UserRepository userRepository, RoleRepository roleRepository,
-                        BCryptPasswordEncoder bCryptPasswordEncoder) {
-        this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    
+    // public UserService(UserRepository userRepository, RoleRepository roleRepository,
+    //                     BCryptPasswordEncoder bCryptPasswordEncoder) {
+    //     this.userRepository = userRepository;
+    //     this.roleRepository = roleRepository;
+    //     this.bCryptPasswordEncoder = bCryptPasswordEncoder;
 
-    }
+    // }
 
 
     public User findUserByEmail(String email) {
@@ -55,13 +55,13 @@ public class UserService {
     //     }
     // }
 
-    public User saveUser(User user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setActive(true);
-        Role userRole = roleRepository.findByLibelle("CLIENT");
-        user.setRole(new HashSet<Role>(Arrays.asList(userRole)));
-        return userRepository.save(user);
-    }
+    // public User saveUser(User user) {
+    //     user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+    //     // user.setActive(true);
+    //     Role userRole = roleRepository.findByLibelle("CLIENT");
+    //     // user.setRole(new HashSet<Role>(Arrays.asList(userRole)));
+    //     return userRepository.save(user);
+    // }
 
 
     public User findUserByUserName(Object userName) {

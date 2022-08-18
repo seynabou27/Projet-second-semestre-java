@@ -13,7 +13,7 @@
       <h1>Je suis dans la liste des burgers</h1>
 
 
-      <h1>Liste categories</h1>
+      <h1>Liste burger</h1>
 
       <div class="container">
         <table class="table">
@@ -27,12 +27,17 @@
               </tr>
             </thead>
             <tbody>
-              <tr th:each="bu:${listBurger}">
-                <!--<th scope="row" th:text="${bu.id}"></th>!-->
-              <td th:text="${bu.nom}"></td>
+              <tr>
+                <tr th:each="bu:${burgers}">
+                    <th scope="row" th:text="${bu.id}"></th>
+                    <td th:text="${bu.nom}"></td>
+                    <td th:text="${bu.prix +'FCFA'}"></td>
+                  <td></td>
+                <td></td>                
+
                 
 
-                {# <td><a th:href="@{/categorie/delete/{id}(id=${c.id})}" class="btn btn-primary">Supprimer</a></td> #}
+                {# <td><a th:href="@{/burgers/delete/{id}(id=${c.id})}" class="btn btn-primary">Supprimer</a></td> #}
               </tr>
             </tbody>
           </table>

@@ -21,6 +21,7 @@ public class Burger {
 
     private String details;
 
+
     public String getDetails() {
         return details;
     }

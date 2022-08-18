@@ -302,3 +302,8 @@ body {
 .Quantite {
   margin-top: 103px;
 }
+
+/* line 1, ../sass/security/login.scss */
+body {
+  background-color: aqua;
+}
