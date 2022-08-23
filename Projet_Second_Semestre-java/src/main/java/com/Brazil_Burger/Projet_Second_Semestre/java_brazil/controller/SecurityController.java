@@ -1,20 +1,10 @@
 package com.Brazil_Burger.Projet_Second_Semestre.java_brazil.controller;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.models.User;
 import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.services.UserService;
@@ -24,7 +14,6 @@ import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.services.UserService
 public class SecurityController {
     @Autowired
     private UserService userService;
-
     @GetMapping("/login")
     public String getLoginView() {
         return "Security/login";
@@ -32,7 +21,9 @@ public class SecurityController {
 
     @GetMapping("/gestionnaire/home")
     public String home(Model model){
-        
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.findUserByEmail(auth.getName());
+        model.addAttribute("msg", "Bonjour " + user.getNom() + " " + user.getPrenom());
         return "gestionnaire/listCommande";
     }
 

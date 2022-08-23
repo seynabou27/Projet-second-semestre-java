@@ -1,7 +1,7 @@
 package com.Brazil_Burger.Projet_Second_Semestre.java_brazil.models;
 
 import java.io.Serializable;
-
+import java.util.Collection;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorValue;
