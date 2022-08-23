@@ -2,6 +2,7 @@ package com.Brazil_Burger.Projet_Second_Semestre.java_brazil.models;
 
 import java.io.Serializable;
 
+
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -82,10 +83,20 @@ public class User implements Serializable {
     public void setRole(Role role) {
         this.role = role;
     }
+    // private Set<Role> roles = new HashSet<>();
 
-    public Object getUserName() {
-        return null;
-    }
+    // public boolean hasRole(String roleName) {
+    //     Iterator<Role> iterator = this.roles.iterator();
+    //     while (iterator.hasNext()) {
+    //         Role role = iterator.next();
+    //         if (role.getLibelle().equals(roleName)) {
+    //             return true;
+    //         }
+    //     }
+         
+    //     return false;
+    // }
+    
 
     
 

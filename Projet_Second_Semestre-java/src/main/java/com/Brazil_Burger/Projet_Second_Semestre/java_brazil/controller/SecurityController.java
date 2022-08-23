@@ -1,26 +1,59 @@
 package com.Brazil_Burger.Projet_Second_Semestre.java_brazil.controller;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.models.User;
+import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.services.UserService;
 
 
 @Controller
 public class SecurityController {
-    // @Autowired
-    // private UserService userService;
+    @Autowired
+    private UserService userService;
 
-    // @GetMapping("/login")
-    // public String getLoginView() {
-    //     return "Security/login";
-    // }
+    @GetMapping("/login")
+    public String getLoginView() {
+        return "Security/login";
+    }
 
-    // @GetMapping("/gestionnaire/home")
-    // public String home(Model model){
-    //     System.out.println("test");
-    //     org.springframework.security.core.Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-    //     User user = userService.findUserByEmail(auth.getName());
-    //     model.addAttribute("msg", "Bonjour " + user.getNom() + " " + user.getPrenom());
-    //     return "gestionnaire/listCommande";
-    // }
-    // ////registration
+    @GetMapping("/gestionnaire/home")
+    public String home(Model model){
+        
+        return "gestionnaire/listCommande";
+    }
+
+    
+
+     ////registration
+    @GetMapping({"/inscription"})
+    public String registration(Model model){
+       
+        return "Security/inscription";
+    }
+    @GetMapping({"/error"})
+    public String error(Model model){
+       
+        return "Security/error";
+    }
+
+
+
+
+    ////registration
     // @GetMapping({"/inscription"})
     // public String registration(Model model){
     //     ModelAndView modelAndView = new ModelAndView();
@@ -31,14 +64,14 @@ public class SecurityController {
     //     return "Security/inscription";
     // }
 
-    // // @GetMapping({"/registration"})
-    // // public String addUser(Model model){
-    // //     User user = new User();
-    // //     model.addAttribute("burger", burger);
+    // @GetMapping({"/registration"})
+    // public String addUser(Model model){
+    //     User user = new User();
+    //     model.addAttribute("burger", burger);
 
-    // //     return null;
+    //     return null;
 
-    // // }
+    // }
 
     // @RequestMapping(value = "/inscription", method = RequestMethod.POST)
     // public String createNewUser(@Validated User user, BindingResult bindingResult) {

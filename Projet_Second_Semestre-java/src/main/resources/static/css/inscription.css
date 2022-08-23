@@ -1,0 +1,101 @@
+body{
+    background-color: #1A1A1A;
+    color: white;
+}
+
+ .return {
+    background-color: #1b1a1a;
+    width: 100%;
+    top: 0;
+    right: 0;
+    padding: 4px;
+    color: white;
+    border: 1px solid #262424;
+}
+
+.image{
+    /* top: 157px; */
+    left: 140px;
+    width: 467px;
+    height: 602px;
+    background: transparent url('img/Groupe 180756.png') 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+.titre {
+    top: 216px;
+    left: 865px;
+    width: 398px;
+    height: 79px;
+    text-align: center;
+    font: normal normal normal 36px/43px Gilroy-Medium;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    margin-top: 103px;
+    margin-left: 80px;
+}
+.form-group input {
+    top: 363px;
+    left: 820px;
+/*     width: 406px;
+ */    height: 48px;
+    border: 1px solid #E09D56;
+    border-radius: 9px;
+    margin-left: 43px;
+
+    /* opacity: 0.34; */
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #1a1a1a;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.login-form{
+    margin-top: 60px;
+
+}
+#email{
+    width:83%;
+}
+
+.btn1 {
+    margin-top: 45px;
+    margin-left: 124px;
+}
+
+.btn-primary1{
+    top: 530px;
+    left: 872px;
+    width: 195px;
+    height: 39px;
+    /* text-align: left; */
+    font: normal normal medium 16px/22px Avenir;
+    letter-spacing: 0.32px;
+    color: #ffffff;
+    opacity: 1;
+    background-color: rgba(183, 179, 175, 0.594);
+
+}
+.btn-primary2{
+    top: 530px;
+    left: 872px;
+    width: 195px;
+    height: 39px;
+    /* text-align: left; */
+    font: normal normal medium 16px/22px Avenir;
+    letter-spacing: 0.32px;
+    color: #ffffff;
+    opacity: 1;
+    background-color: #008853;
+
+}

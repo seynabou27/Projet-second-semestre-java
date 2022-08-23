@@ -1,10 +1,7 @@
 package com.Brazil_Burger.Projet_Second_Semestre.java_brazil.services;
 
-import java.util.Arrays;
-import java.util.HashSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.Brazil_Burger.Projet_Second_Semestre.java_brazil.models.Gestionnaire;
@@ -37,6 +34,9 @@ public class UserService {
     public User findUserByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+    public User findUserByNom(String nom) {
+        return userRepository.findByEmail(nom);
+    }
 
     public Gestionnaire findGestionnaireByEmail(String email) {
         return gestionnaireRepository.findByEmail(email);
@@ -46,14 +46,14 @@ public class UserService {
         return roleRepository.findByLibelle(libelle);
     }
 
-    // public User saveUser(User user) {
-    //     try {
-    //         userRepository.save(user);
-    //         return user;
-    //     } catch(Exception e) {
-    //         throw e;
-    //     }
-    // }
+    public User saveUser(User user) {
+        try {
+            userRepository.save(user);
+            return user;
+        } catch(Exception e) {
+            throw e;
+        }
+    }
 
     // public User saveUser(User user) {
     //     user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
@@ -64,8 +64,6 @@ public class UserService {
     // }
 
 
-    public User findUserByUserName(Object userName) {
-        return null;
-    }
+    
   
 }

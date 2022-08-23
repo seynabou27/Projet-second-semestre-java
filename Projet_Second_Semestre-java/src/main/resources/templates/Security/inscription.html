@@ -1,63 +1,73 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Inscription</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{css/inscription.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
+
   </head>
   <body>
-    <form th:action="@{/}" method="get">
-        <button class="btn btn-md btn-warning btn-block" type="Submit">Go To Login Page</button>
-    </form>
-    
-    <div class="container">
+    <div class="container-fluid">
+        <div class="return">
+            <a th:href="@{/}" style="color:white ;"><i class="fa-solid fa-angle-left"></i> Retour vers l'accueil</a>
+        </div>
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-                <form autocomplete="off" action="#" th:action="@{/inscription}"
-                th:object="${users}" method="post" class="form-horizontal"
-                role="form">
-              <h2>Registration Form</h2>
-              <div class="form-group">
-                  <div class="col-sm-9">
-                      
-                      <input type="text" placeholder="Name" th:field="*{nom}"
-                             class="form-control"/>
-                  </div>
-              </div>
+            <div class="col-md-6 image">
+                <img th:src="@{images/login1.png}" alt="">
 
-              <div class="form-group">
-                  <div class="col-sm-9">
-                      
-                      <input type="text" 
-                             placeholder="Last Name" th:field="*{prenom}" class="form-control"/>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <div class="col-sm-9">
-                      <input type="text" th:field="*{email}" placeholder="Email"
-                             class="form-control"/> 
-                  </div>
-              </div>
-              <div class="form-group">
-                    <div class="col-sm-9">
-                        <input type="password" th:field="*{password}"
-                               placeholder="Password" class="form-control"/> <label
-                            
+            </div>
+           
+            <div class="col-md-6">
+
+                <div class="titre">
+                    Inscrivez-vous pour avoir un espace perso                
+                </div>
+                <form>
+                    <div class="login-form">
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                            <input type="text" class="form-control" id="" placeholder="Nom">
+                            </div>
+                            <div class="form-group col-md-5">
+                            <input type="text" class="form-control" id="" placeholder="Prenom">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-5">
+                            <input type="text" class="form-control" id="" placeholder="Téléphone">
+                            </div>
+                            <div class="form-group col-md-5">
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                            </div>
+                        </div>
+
+                        <div class="btn1">
+                            <!--<form th:action="@{/inscription}" method="get">!-->
+                            <a class="btn btn-primary1" th:href="@{/login}" type="Submit">J’ai déjà un compte</a>
+                                                    
+                            <button class="btn btn-primary2" name="Submit" value="Login" type="Submit">Je valide l’inscription</button>                          
+                        </div>
                     </div>
+                </form>
               
-
-              <div class="form-group">
-                  <div class="col-sm-9">
-                      <button type="submit" class="btn btn-primary btn-block">Register User</button>
-                  </div>
-              </div>
+            </div>
 
 
-          </form>
+        </div>
+
+
+
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

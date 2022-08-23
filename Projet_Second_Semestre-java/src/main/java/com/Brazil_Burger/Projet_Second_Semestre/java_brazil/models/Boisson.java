@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Boisson {
@@ -12,6 +14,13 @@ public class Boisson {
     private Long id;
     private String nom;
     private String images;
+    private String details;
+    private Integer quantiteSotck;
+
+    @ManyToOne
+    @JoinColumn(name = "taille" , referencedColumnName = "id")
+    protected Taille taille ;
+
     public Long getId() {
         return id;
     }
@@ -29,5 +38,24 @@ public class Boisson {
     }
     public void setImages(String images) {
         this.images = images;
+    }
+    public String getDetails() {
+        return details;
+    }
+    public void setDetails(String details) {
+        this.details = details;
+    }
+   
+    public Taille getTaille() {
+        return taille;
+    }
+    public void setTaille(Taille taille) {
+        this.taille = taille;
+    }
+    public Integer getQuantiteSotck() {
+        return quantiteSotck;
+    }
+    public void setQuantiteSotck(Integer quantiteSotck) {
+        this.quantiteSotck = quantiteSotck;
     } 
 }

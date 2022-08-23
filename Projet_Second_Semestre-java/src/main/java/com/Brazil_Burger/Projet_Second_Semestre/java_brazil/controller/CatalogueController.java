@@ -3,6 +3,7 @@ package com.Brazil_Burger.Projet_Second_Semestre.java_brazil.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +33,7 @@ public class CatalogueController {
     private FriteServices friteServices;
    /*  @Autowired
     private CatalogueService  catalogueService; */
+    // @Secured(value = {"ROLE_CLIENT","ROLE_GESTIONNAIRE"})
     @GetMapping({"/"})
     public String catalogue(final Model model){
 
@@ -44,7 +46,8 @@ public class CatalogueController {
         
         return "Catalogue/catalogue_list";
     }
-
+    
+//    @Secured(value = {"ROLE_CLIENT"})
    @GetMapping({"/detail/{type}/{id}"})
    public String detailProduit(@PathVariable final Long id,
                                 @PathVariable final String type, final Model model){

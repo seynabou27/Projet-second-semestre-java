@@ -1,11 +1,13 @@
 package com.Brazil_Burger.Projet_Second_Semestre.java_brazil.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Burger {
@@ -20,6 +22,9 @@ public class Burger {
     private int prix;
 
     private String details;
+    
+    @OneToMany(mappedBy = "burger")
+    private List<Menu_Burgers> menu_Burgers = new ArrayList<>();
 
 
     public String getDetails() {

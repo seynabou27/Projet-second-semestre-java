@@ -1,9 +1,13 @@
 package com.Brazil_Burger.Projet_Second_Semestre.java_brazil.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Taille {
@@ -12,6 +16,14 @@ public class Taille {
     private Long id;
     private String nom;
     private Integer prix;
+
+    @OneToMany(mappedBy = "taille")
+    private List<Boisson> boissons = new ArrayList<>();
+
+    @OneToMany(mappedBy = "taille")
+    private List<Menu_Taille> menu_Tailles = new ArrayList<>();
+
+
     public Long getId() {
         return id;
     }
